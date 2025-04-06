@@ -1,32 +1,82 @@
-# Prerequisites
-*.d
+using namespace std;
+#include <iostream>
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+class rectangle {
+public:
+ float _width;
+ float _height;
+ rectangle(float width, float height) {
+  _width = width;
+  _height = height;
+ }
+ void calculatePerimetr(float width, float height) {
+  int perimetr = 2*(width + height);
+  cout <<"Perimetr" <<perimetr << endl;
+ }
+ void calculateArea(float width, float height) {
+  int area = width * height;
+  cout <<"Area:" << area << endl;
+ }
+ void showRectangle() {
+	cout << "_________________rectangle_____________________" << endl;
+    cout << "width:" << _width << endl;
+    cout << "height:" << _height << endl;
+    
+ }
+};
 
-# Precompiled Headers
-*.gch
-*.pch
+class circle {
+public:
+	float _radius;
+	const float _pi = 3.14;
+	circle(float radius) {
+		_radius = radius;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+	}
+	void calculatelenght(float radius,const float pi) {
+		float perimetr = 2 * radius * pi;
+		cout << "area:" << perimetr << endl;
+	}
 
-# Fortran module files
-*.mod
-*.smod
+	void showCircle() {
+		cout << "_________________circle_____________________" << endl;
+		cout << "Radius:" << _radius << endl;
+		cout << "Pi:" << _pi << endl;
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+	}
+};
+class scuare {
+public:
+ float _width;
+ scuare(float width) {
+  _width = width;
+ }
+ void calculatePerimetr(float width) {
+  int perimetr = 4*width ;
+  cout <<"Perimetr:" <<perimetr << endl;
+ }
+ void calculateArea(float width) {
+  int area = width * width;
+  cout <<"Area:" << area << endl;
+ }
+ void showRectangle() {
+	cout << "_________________scuare_____________________" << endl;
+    cout << "width:" << _width << endl;
+    
+ }
+};
+void main() {
+ rectangle r1(5, 6);
+ r1.showRectangle();
+ r1.calculateArea(5, 6);
+ r1.calculatePerimetr(5, 6);
 
-# Executables
-*.exe
-*.out
-*.app
+ circle c1(5);
+ c1.showCircle();
+ c1.calculatelenght(5, 3.14);
+
+ scuare s1( 6);
+ s1.showRectangle();
+ s1.calculateArea(6);
+ s1.calculatePerimetr( 6);
+}
